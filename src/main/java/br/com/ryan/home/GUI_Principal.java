@@ -6,27 +6,29 @@ import br.com.ryan.component.frame.RFrame;
 import br.com.ryan.component.label.RLabel;
 import br.com.ryan.component.panel.RPanel;
 
+import java.awt.*;
+
 public class GUI_Principal {
 
     public static void main(String[] args) {
         RFrame frame = new RFrame();
 
-        RPanel panel0 = new RPanel(0);
-        panel0.add(new RLabel("One"));
+        RPanel panelTop = new RPanel(Color.RED);
+        panelTop.add(new RLabel("One"));
+        panelTop.add(new RButton(new ActionSystemPrintln(), "Poo"));
 
-        RPanel panel1 = new RPanel(105);
-        RButton button0 = new RButton(new ActionSystemPrintln(), "Poo");
-        panel1.add(button0);
+        RPanel panelCenter = new RPanel(Color.WHITE);
+        panelCenter.setLayout(new BorderLayout(10,10));
+        panelCenter.add(new RPanel(Color.DARK_GRAY, 50,50), BorderLayout.NORTH);
+        panelCenter.add(new RPanel(Color.ORANGE,50,50), BorderLayout.WEST);
+        panelCenter.add(new RPanel(Color.PINK,50,50), BorderLayout.CENTER);
+        panelCenter.add(new RPanel(Color.ORANGE,50,50), BorderLayout.EAST);
+        panelCenter.add(new RPanel(Color.DARK_GRAY,50,50), BorderLayout.SOUTH);
 
-        RPanel panel2 = new RPanel(210);
-        panel2.add(new RLabel("Three"));
-
-        RPanel panel3 = new RPanel(315);
-        panel3.add(new RLabel("Four"));
-
-        frame.add(panel0);
-        frame.add(panel1);
-        frame.add(panel2);
-        frame.add(panel3);
+        frame.add(panelTop, BorderLayout.NORTH);
+        frame.add(new RPanel(Color.GREEN), BorderLayout.WEST);
+        frame.add(panelCenter, BorderLayout.CENTER);
+        frame.add(new RPanel(Color.YELLOW), BorderLayout.EAST);
+        frame.add(new RPanel(Color.BLUE), BorderLayout.SOUTH);
     }
 }

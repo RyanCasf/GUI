@@ -8,11 +8,19 @@ import java.awt.*;
  */
 public class RPanel extends JPanel {
 
-    public RPanel(final int Y) {
-        setBounds(0, Y, 420,105);
-        setBackground(Color.black);
-        setVisible(true);
+    public RPanel(final Color COLOR, final int WIDTH, final int HEIGHT) {
+        this();
+        setBackground(COLOR);
+        setPreferredSize(new Dimension(WIDTH, HEIGHT));
+    }
 
-        setLayout(new BorderLayout());
+    public RPanel(final Color COLOR) {
+        this();
+        setBackground(COLOR);
+        setPreferredSize(new Dimension(100, 100));
+    }
+
+    private RPanel() {
+        setVisible(true);
     }
 }
