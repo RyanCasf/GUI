@@ -1,5 +1,7 @@
 package br.com.ryan.component.frame;
 
+import br.com.ryan.util.ImageUtil;
+
 import javax.swing.*;
 import java.awt.*;
 
