@@ -5,8 +5,8 @@ import java.awt.*;
 
 public class RLabel extends JLabel {
 
-    public RLabel() {
-        setText("Do you want?");
+    public RLabel(final String TEXT) {
+        setText(TEXT);
         setHorizontalAlignment(JLabel.CENTER);
         setVerticalAlignment(JLabel.CENTER);
         setForeground(Color.WHITE);

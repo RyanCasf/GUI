@@ -11,6 +11,7 @@ public class RFrame extends JFrame {
         setTitle("JFrame");
         setResizable(false);
 
+        setLayout(null);
         getContentPane().setBackground(new Color(123, 50, 250)); // change color of backgroung
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // exit out of application
     }
