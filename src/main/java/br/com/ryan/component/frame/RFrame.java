@@ -1,7 +1,5 @@
 package br.com.ryan.component.frame;
 
-import br.com.ryan.util.ImageUtil;
-
 import javax.swing.*;
 import java.awt.*;
 
@@ -15,6 +13,6 @@ public class RFrame extends JFrame {
 
         setLayout(null);
         getContentPane().setBackground(new Color(123, 50, 250)); // change color of backgroung
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // exit out of application
+        setDefaultCloseOperation(EXIT_ON_CLOSE); // exit out of application
     }
 }

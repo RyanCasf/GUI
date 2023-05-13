@@ -12,5 +12,7 @@ public class RPanel extends JPanel {
         setBounds(0, Y, 420,105);
         setBackground(Color.black);
         setVisible(true);
+
+        setLayout(new BorderLayout());
     }
 }
