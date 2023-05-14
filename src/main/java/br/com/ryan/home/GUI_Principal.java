@@ -5,6 +5,7 @@ import br.com.ryan.component.button.RButton;
 import br.com.ryan.component.frame.RFrame;
 import br.com.ryan.component.label.RLabel;
 import br.com.ryan.component.panel.RPanel;
+import br.com.ryan.layout.RColor;
 
 import java.awt.*;
 
@@ -13,22 +14,22 @@ public class GUI_Principal {
     public static void main(String[] args) {
         RFrame frame = new RFrame();
 
-        RPanel panelTop = new RPanel(Color.RED);
+        RPanel panelTop = new RPanel(RColor.PASTEL_RED);
         panelTop.add(new RLabel("One"));
         panelTop.add(new RButton(new ActionSystemPrintln(), "Poo"));
 
-        RPanel panelCenter = new RPanel(Color.WHITE);
+        RPanel panelCenter = new RPanel(RColor.WHITE);
         panelCenter.setLayout(new BorderLayout(10,10));
-        panelCenter.add(new RPanel(Color.DARK_GRAY, 50,50), BorderLayout.NORTH);
-        panelCenter.add(new RPanel(Color.ORANGE,50,50), BorderLayout.WEST);
-        panelCenter.add(new RPanel(Color.PINK,50,50), BorderLayout.CENTER);
-        panelCenter.add(new RPanel(Color.ORANGE,50,50), BorderLayout.EAST);
-        panelCenter.add(new RPanel(Color.DARK_GRAY,50,50), BorderLayout.SOUTH);
+        panelCenter.add(new RPanel(RColor.DARK_GRAY, 50,50), BorderLayout.NORTH);
+        panelCenter.add(new RPanel(RColor.PASTEL_ORANGE,50,50), BorderLayout.WEST);
+        panelCenter.add(new RPanel(RColor.PASTEL_PINK,50,50), BorderLayout.CENTER);
+        panelCenter.add(new RPanel(RColor.PASTEL_ORANGE,50,50), BorderLayout.EAST);
+        panelCenter.add(new RPanel(RColor.DARK_GRAY,50,50), BorderLayout.SOUTH);
 
         frame.add(panelTop, BorderLayout.NORTH);
-        frame.add(new RPanel(Color.GREEN), BorderLayout.WEST);
+        frame.add(new RPanel(RColor.PASTEL_GREEN), BorderLayout.WEST);
         frame.add(panelCenter, BorderLayout.CENTER);
-        frame.add(new RPanel(Color.YELLOW), BorderLayout.EAST);
-        frame.add(new RPanel(Color.BLUE), BorderLayout.SOUTH);
+        frame.add(new RPanel(RColor.PASTEL_YELLOW), BorderLayout.EAST);
+        frame.add(new RPanel(RColor.PASTEL_BLUE), BorderLayout.SOUTH);
     }
 }
