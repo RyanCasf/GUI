@@ -22,5 +22,6 @@ public class RPanel extends JPanel {
 
     private RPanel() {
         setVisible(true);
+        setLayout(new BorderLayout());
     }
 }

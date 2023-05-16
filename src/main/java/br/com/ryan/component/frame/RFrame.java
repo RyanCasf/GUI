@@ -9,7 +9,6 @@ public class RFrame extends JFrame {
         setVisible(true);
         setSize(500, 500);
         setTitle("JFrame");
-        setResizable(false);
 
         setLayout(new BorderLayout(10,10));
         getContentPane().setBackground(Color.WHITE); // change color of backgroung

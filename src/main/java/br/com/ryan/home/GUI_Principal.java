@@ -16,7 +16,10 @@ public class GUI_Principal {
 
         RPanel panelTop = new RPanel(RColor.PASTEL_RED);
         panelTop.add(new RLabel("One"));
-        panelTop.add(new RButton(new ActionSystemPrintln(), "Poo"));
+        panelTop.add(new RButton(new ActionSystemPrintln(), "Poo 1"));
+        panelTop.add(new RButton(new ActionSystemPrintln(), "Poo 2"));
+        panelTop.add(new RButton(new ActionSystemPrintln(), "Poo 3"));
+        panelTop.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
 
         RPanel panelCenter = new RPanel(RColor.WHITE);
         panelCenter.setLayout(new BorderLayout(10,10));
