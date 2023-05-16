@@ -25,7 +25,7 @@ public class GUI_Principal {
         panelCenter.setLayout(new BorderLayout(10,10));
         panelCenter.add(new RPanel(RColor.DARK_GRAY, 50,50), BorderLayout.NORTH);
         panelCenter.add(new RPanel(RColor.PASTEL_ORANGE,50,50), BorderLayout.WEST);
-        panelCenter.add(new RPanel(RColor.PASTEL_PINK,50,50), BorderLayout.CENTER);
+        panelCenter.add(panelCenterGrid(), BorderLayout.CENTER);
         panelCenter.add(new RPanel(RColor.PASTEL_ORANGE,50,50), BorderLayout.EAST);
         panelCenter.add(new RPanel(RColor.DARK_GRAY,50,50), BorderLayout.SOUTH);
 
@@ -34,5 +34,22 @@ public class GUI_Principal {
         frame.add(panelCenter, BorderLayout.CENTER);
         frame.add(new RPanel(RColor.PASTEL_YELLOW), BorderLayout.EAST);
         frame.add(new RPanel(RColor.PASTEL_BLUE), BorderLayout.SOUTH);
+    }
+
+    private static RPanel panelCenterGrid() {
+        RPanel panelCenterGrid  = new RPanel(RColor.PASTEL_PINK,50,50);
+        panelCenterGrid.setLayout(new GridLayout(3,3, 2, 2));
+
+        panelCenterGrid.add(new RButton(null, "1"));
+        panelCenterGrid.add(new RButton(null, "2"));
+        panelCenterGrid.add(new RButton(null, "3"));
+        panelCenterGrid.add(new RButton(null, "4"));
+        panelCenterGrid.add(new RButton(null, "5"));
+        panelCenterGrid.add(new RButton(null, "6"));
+        panelCenterGrid.add(new RButton(null, "7"));
+        panelCenterGrid.add(new RButton(null, "8"));
+        panelCenterGrid.add(new RButton(null, "9"));
+
+        return panelCenterGrid;
     }
 }

@@ -13,7 +13,10 @@ public class RButton extends JButton {
         setText(TITLE);
         setVisible(true);
         setFocusable(true);
-        addActionListener(actionListener);
         setFont(new Font("Verdana", Font.PLAIN, 10));
+
+        if (actionListener != null) {
+            addActionListener(actionListener);
+        }
     }
 }
