@@ -1,4 +1,4 @@
-package br.com.ryan.home;
+package br.com.ryan.page;
 
 import br.com.ryan.action.ActionSystemPrintln;
 import br.com.ryan.component.button.RButton;
@@ -9,15 +9,15 @@ import br.com.ryan.layout.RColor;
 
 import java.awt.*;
 
-public class GUI_Principal {
+public class LaunchPage {
 
-    public static void main(String[] args) {
+    public LaunchPage() {
         RFrame frame = new RFrame();
 
         RPanel panelTop = new RPanel(RColor.PASTEL_RED);
         panelTop.add(new RLabel("One"));
         panelTop.add(new RButton(new ActionSystemPrintln(), "Poo 1"));
-        panelTop.add(new RButton(new ActionSystemPrintln(), "Poo 2"));
+        panelTop.add(new RButton(btn -> {frame.dispose(); new NewPage();}, "New Page"));
         panelTop.add(new RButton(new ActionSystemPrintln(), "Poo 3"));
         panelTop.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
 
@@ -40,15 +40,15 @@ public class GUI_Principal {
         RPanel panelCenterGrid  = new RPanel(RColor.PASTEL_PINK,50,50);
         panelCenterGrid.setLayout(new GridLayout(3,3, 2, 2));
 
-        panelCenterGrid.add(new RButton(null, "1"));
-        panelCenterGrid.add(new RButton(null, "2"));
-        panelCenterGrid.add(new RButton(null, "3"));
-        panelCenterGrid.add(new RButton(null, "4"));
-        panelCenterGrid.add(new RButton(null, "5"));
-        panelCenterGrid.add(new RButton(null, "6"));
-        panelCenterGrid.add(new RButton(null, "7"));
-        panelCenterGrid.add(new RButton(null, "8"));
-        panelCenterGrid.add(new RButton(null, "9"));
+        panelCenterGrid.add(new RButton(btn -> System.out.println("1"), "1"));
+        panelCenterGrid.add(new RButton(btn -> System.out.println("2"), "2"));
+        panelCenterGrid.add(new RButton(btn -> System.out.println("3"), "3"));
+        panelCenterGrid.add(new RButton(btn -> System.out.println("4"), "4"));
+        panelCenterGrid.add(new RButton(btn -> System.out.println("5"), "5"));
+        panelCenterGrid.add(new RButton(btn -> System.out.println("6"), "6"));
+        panelCenterGrid.add(new RButton(btn -> System.out.println("7"), "7"));
+        panelCenterGrid.add(new RButton(btn -> System.out.println("8"), "8"));
+        panelCenterGrid.add(new RButton(btn -> System.out.println("9"), "9"));
 
         return panelCenterGrid;
     }
