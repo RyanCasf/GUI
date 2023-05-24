@@ -12,9 +12,17 @@ import java.awt.*;
 
 public class LaunchPage {
 
-    public LaunchPage() {
-        RFrame frame = new RFrame();
+    private RFrame frame = new RFrame();
 
+    public LaunchPage() {
+        frame.add(panelTop(), BorderLayout.NORTH);
+        frame.add(panelOeste(), BorderLayout.WEST);
+        frame.add(panelCenter(), BorderLayout.CENTER);
+        frame.add(panelLeste(), BorderLayout.EAST);
+        frame.add(panelBottom(), BorderLayout.SOUTH);
+    }
+
+    private RPanel panelTop() {
         RPanel panelTop = new RPanel(RColor.PASTEL_RED);
         panelTop.add(new RLabel("One"));
         panelTop.add(new RButton(new ActionSystemPrintln(), "Poo 1"));
@@ -22,6 +30,14 @@ public class LaunchPage {
         panelTop.add(new RButton(new ActionSystemPrintln(), "Poo 3"));
         panelTop.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
 
+        return panelTop;
+    }
+
+    private RPanel panelOeste() {
+        return new RPanel(RColor.PASTEL_GREEN);
+    }
+
+    private RPanel panelCenter() {
         RPanel panelCenter = new RPanel(RColor.WHITE);
         panelCenter.setLayout(new BorderLayout(10,10));
         panelCenter.add(new RPanel(RColor.DARK_GRAY, 50,50), BorderLayout.NORTH);
@@ -30,14 +46,10 @@ public class LaunchPage {
         panelCenter.add(new RPanel(RColor.PASTEL_ORANGE,50,50), BorderLayout.EAST);
         panelCenter.add(new RPanel(RColor.DARK_GRAY,50,50), BorderLayout.SOUTH);
 
-        frame.add(panelTop, BorderLayout.NORTH);
-        frame.add(new RPanel(RColor.PASTEL_GREEN), BorderLayout.WEST);
-        frame.add(panelCenter, BorderLayout.CENTER);
-        frame.add(new RPanel(RColor.PASTEL_YELLOW), BorderLayout.EAST);
-        frame.add(panelBottom(), BorderLayout.SOUTH);
+        return panelCenter;
     }
 
-    private static RPanel panelCenterGrid() {
+    private RPanel panelCenterGrid() {
         RPanel panelCenterGrid  = new RPanel(RColor.PASTEL_PINK,50,50);
         panelCenterGrid.setLayout(new GridLayout(3,3, 2, 2));
 
@@ -54,7 +66,11 @@ public class LaunchPage {
         return panelCenterGrid;
     }
 
-    private static RPanel panelBottom() {
+    private RPanel panelLeste() {
+        return new RPanel(RColor.PASTEL_YELLOW);
+    }
+
+    private RPanel panelBottom() {
         RPanel panelBottom = new RPanel(RColor.PASTEL_BLUE);
         panelBottom.setLayout(new GridLayout(1,2, 2, 2));
 
