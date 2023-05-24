@@ -1,7 +1,8 @@
 package br.com.ryan.component.button;
 
+import br.com.ryan.layout.RFonte;
+
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionListener;
 
 /*
@@ -13,7 +14,7 @@ public class RButton extends JButton {
         setText(TITLE);
         setVisible(true);
         setFocusable(true);
-        setFont(new Font("Verdana", Font.PLAIN, 10));
+        setFont(RFonte.VERDANA);
 
         if (actionListener != null) {
             addActionListener(actionListener);

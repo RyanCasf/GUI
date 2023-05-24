@@ -1,14 +1,15 @@
 package br.com.ryan.component.checkbox;
 
+import br.com.ryan.layout.RFonte;
+
 import javax.swing.*;
-import java.awt.*;
 
 public class RCheckBox extends JCheckBox {
 
     public RCheckBox(final String TEXT) {
         setText(TEXT);
         setFocusable(false);
-        setFont(new Font("Verdana", Font.PLAIN, 11));
+        setFont(RFonte.VERDANA);
         setBackground(null);
     }
 }
