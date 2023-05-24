@@ -5,6 +5,7 @@ import br.com.ryan.component.button.RButton;
 import br.com.ryan.component.frame.RFrame;
 import br.com.ryan.component.label.RLabel;
 import br.com.ryan.component.panel.RPanel;
+import br.com.ryan.component.textfield.RTextField;
 import br.com.ryan.layout.RColor;
 
 import java.awt.*;
@@ -33,7 +34,7 @@ public class LaunchPage {
         frame.add(new RPanel(RColor.PASTEL_GREEN), BorderLayout.WEST);
         frame.add(panelCenter, BorderLayout.CENTER);
         frame.add(new RPanel(RColor.PASTEL_YELLOW), BorderLayout.EAST);
-        frame.add(new RPanel(RColor.PASTEL_BLUE), BorderLayout.SOUTH);
+        frame.add(panelBottom(), BorderLayout.SOUTH);
     }
 
     private static RPanel panelCenterGrid() {
@@ -51,5 +52,17 @@ public class LaunchPage {
         panelCenterGrid.add(new RButton(btn -> System.out.println("9"), "9"));
 
         return panelCenterGrid;
+    }
+
+    private static RPanel panelBottom() {
+        RPanel panelBottom = new RPanel(RColor.PASTEL_BLUE);
+        panelBottom.setLayout(new GridLayout(1,2, 2, 2));
+
+        panelBottom.add(new RTextField());
+        panelBottom.add(new RButton(btn -> {
+            System.out.println(((RTextField) panelBottom.getComponent(0)).getText());
+        }, "Enviar"));
+
+        return panelBottom;
     }
 }
