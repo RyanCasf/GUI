@@ -2,6 +2,7 @@ package br.com.ryan.page;
 
 import br.com.ryan.component.button.RButton;
 import br.com.ryan.component.checkbox.RCheckBox;
+import br.com.ryan.component.combobox.RComboBox;
 import br.com.ryan.component.frame.RFrame;
 import br.com.ryan.component.panel.RPanel;
 import br.com.ryan.component.radiobutton.RRadioButton;
@@ -14,7 +15,9 @@ public class NewPage {
 
     public NewPage() {
         RFrame frame = new RFrame();
+
         frame.add(panelTop(), BorderLayout.NORTH);
+        frame.add(panelCenter(), BorderLayout.CENTER);
         frame.add(panelBottom(), BorderLayout.SOUTH);
     }
 
@@ -26,6 +29,19 @@ public class NewPage {
         temp.add(new RButton(btn -> {
             System.out.println(((RCheckBox) temp.getComponent(0)).isSelected());
         }, "Enviar"));
+
+        return temp;
+    }
+
+    private RPanel panelCenter() {
+        RPanel temp = new RPanel(RColor.PASTEL_BLUE);
+
+        RComboBox comboBox = new RComboBox();
+        comboBox.addItem("Top");
+        comboBox.addItem(("Mid"));
+        comboBox.addItem(("Bot"));
+
+        temp.add(comboBox);
 
         return temp;
     }
