@@ -6,8 +6,6 @@
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
 ]
 -src/main/java/br/com/ryan/util/ImageUtil.java,3\2\32e6792f6219583887f17c378a8d7eadda0d7df9
-^
-.src/main/java/br/com/ryan/page/LaunchPage.java,6\b\6b2e7dc15eeb526dc9c56160dbc71d3f9f18da21
 \
 ,src/main/java/br/com/ryan/layout/RColor.java,9\f\9f93c488454f2b7a04ad6df5183f415421f67213
 \
