@@ -17,8 +17,6 @@ k
 e
 5src/main/java/br/com/ryan/component/frame/RFrame.java,a\1\a1f887cced6b97148ed21af6462b0079d60942f6
 e
-5src/main/java/br/com/ryan/component/label/RLabel.java,5\e\5e9062d79990c03e5cc7e94992bbee7c9075fe9d
-e
 5src/main/java/br/com/ryan/component/panel/RPanel.java,3\f\3fad501dba1005f1c00430d475022313e63d2fd7
 m
 =src/main/java/br/com/ryan/component/textfield/RTextField.java,6\3\63f59078779cfec67979019030274d794a55246c
