@@ -20,3 +20,15 @@ e
 5src/main/java/br/com/ryan/component/panel/RPanel.java,3\f\3fad501dba1005f1c00430d475022313e63d2fd7
 m
 =src/main/java/br/com/ryan/component/textfield/RTextField.java,6\3\63f59078779cfec67979019030274d794a55246c
+q
+Asrc/main/java/br/com/ryan/component/radiobutton/RRadioButton.java,7\c\7c3fd406b0741f65603488fceb093d47213ae9d9
+k
+;src/main/java/br/com/ryan/component/combobox/RComboBox.java,5\1\513c1f7d4b0bcf8febecd1412ff1505cb63d7ffa
+g
+7src/main/java/br/com/ryan/component/slider/RSlider.java,0\e\0e90d4c73f7041cb6e10a709b06b60d972d48077
+e
+5src/main/java/br/com/ryan/component/label/RLabel.java,5\e\5e9062d79990c03e5cc7e94992bbee7c9075fe9d
+q
+Asrc/main/java/br/com/ryan/component/progressbar/RProgressBar.java,e\3\e314581c1663c8f748d7c285b25ae7dade2ee63a
+[
++src/main/java/br/com/ryan/page/NewPage.java,c\0\c04929e7da388a7aad05757a1d5b4d62d15f19f1

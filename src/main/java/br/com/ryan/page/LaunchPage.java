@@ -8,6 +8,7 @@ import br.com.ryan.component.panel.RPanel;
 import br.com.ryan.component.textfield.RTextField;
 import br.com.ryan.layout.RColor;
 
+import javax.swing.*;
 import java.awt.*;
 
 public class LaunchPage {
@@ -15,11 +16,40 @@ public class LaunchPage {
     private RFrame frame = new RFrame();
 
     public LaunchPage() {
+        frame.setJMenuBar(menuBar());
         frame.add(panelTop(), BorderLayout.NORTH);
         frame.add(panelOeste(), BorderLayout.WEST);
         frame.add(panelCenter(), BorderLayout.CENTER);
         frame.add(panelLeste(), BorderLayout.EAST);
         frame.add(panelBottom(), BorderLayout.SOUTH);
+    }
+
+    private JMenuBar menuBar() {
+        JMenuBar menuBar = new JMenuBar();
+        menuBar.setVisible(true);
+
+        JMenu fileMenu = new JMenu("File");
+        JMenuItem loadItem = new JMenuItem("Load");
+        JMenuItem saveItem = new JMenuItem("Save");
+
+        fileMenu.add(loadItem);
+        fileMenu.add(saveItem);
+
+        JMenu editMenu = new JMenu("Edit");
+        JMenuItem refactorItem = new JMenuItem("Refactor");
+
+        editMenu.add(refactorItem);
+
+        JMenu helpMenu = new JMenu("Help");
+        JMenuItem updateItem = new JMenuItem("Update");
+
+        helpMenu.add(updateItem);
+
+        menuBar.add(fileMenu);
+        menuBar.add(editMenu);
+        menuBar.add(helpMenu);
+
+        return menuBar;
     }
 
     private RPanel panelTop() {
