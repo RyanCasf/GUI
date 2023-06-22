@@ -1,9 +1,9 @@
 package br.com.ryan.page;
 
 import br.com.ryan.action.ActionSystemPrintln;
+import br.com.ryan.action.FileChoose;
 import br.com.ryan.component.button.RButton;
 import br.com.ryan.component.frame.RFrame;
-import br.com.ryan.component.label.RLabel;
 import br.com.ryan.component.panel.RPanel;
 import br.com.ryan.component.textfield.RTextField;
 import br.com.ryan.layout.RColor;
@@ -54,7 +54,6 @@ public class LaunchPage {
 
     private RPanel panelTop() {
         RPanel panelTop = new RPanel(RColor.PASTEL_RED);
-        panelTop.add(new RLabel("One"));
         panelTop.add(new RButton(new ActionSystemPrintln(), "Poo 1"));
         panelTop.add(new RButton(btn -> {frame.dispose(); new NewPage();}, "New Page"));
         panelTop.add(new RButton(new ActionSystemPrintln(), "Poo 3"));
@@ -87,7 +86,7 @@ public class LaunchPage {
         panelCenterGrid.add(new RButton(btn -> System.out.println("2"), "2"));
         panelCenterGrid.add(new RButton(btn -> System.out.println("3"), "3"));
         panelCenterGrid.add(new RButton(btn -> System.out.println("4"), "4"));
-        panelCenterGrid.add(new RButton(btn -> System.out.println("5"), "5"));
+        panelCenterGrid.add(new RButton(new FileChoose(), ":"));
         panelCenterGrid.add(new RButton(btn -> System.out.println("6"), "6"));
         panelCenterGrid.add(new RButton(btn -> System.out.println("7"), "7"));
         panelCenterGrid.add(new RButton(btn -> System.out.println("8"), "8"));
