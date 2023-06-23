@@ -28,8 +28,6 @@ e
 5src/main/java/br/com/ryan/component/label/RLabel.java,5\e\5e9062d79990c03e5cc7e94992bbee7c9075fe9d
 q
 Asrc/main/java/br/com/ryan/component/progressbar/RProgressBar.java,e\3\e314581c1663c8f748d7c285b25ae7dade2ee63a
-[
-+src/main/java/br/com/ryan/page/NewPage.java,c\0\c04929e7da388a7aad05757a1d5b4d62d15f19f1
 \
 ,src/main/java/br/com/ryan/GUI_Principal.java,8\e\8e2cedf4958b9f24546b073222e097f63695e0d5
 i

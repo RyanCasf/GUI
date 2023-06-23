@@ -91,7 +91,7 @@ public class LaunchPage {
         panelCenterGrid.add(new RButton(btn -> System.out.println("6"), "6"));
         panelCenterGrid.add(new RButton(btn -> System.out.println("7"), "7"));
         panelCenterGrid.add(new RButton(btn -> System.out.println("8"), "8"));
-        panelCenterGrid.add(new RButton(btn -> System.out.println("9"), "9"));
+        panelCenterGrid.add(new RButton(btn -> {frame.dispose(); new RocketPage();}, "F"));
 
         return panelCenterGrid;
     }
