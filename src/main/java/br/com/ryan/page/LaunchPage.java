@@ -1,6 +1,7 @@
 package br.com.ryan.page;
 
 import br.com.ryan.action.ActionSystemPrintln;
+import br.com.ryan.action.ColorChoose;
 import br.com.ryan.action.FileChoose;
 import br.com.ryan.component.button.RButton;
 import br.com.ryan.component.frame.RFrame;
@@ -82,7 +83,7 @@ public class LaunchPage {
         RPanel panelCenterGrid  = new RPanel(RColor.PASTEL_PINK,50,50);
         panelCenterGrid.setLayout(new GridLayout(3,3, 2, 2));
 
-        panelCenterGrid.add(new RButton(btn -> System.out.println("1"), "1"));
+        panelCenterGrid.add(new RButton(new ColorChoose(), "C"));
         panelCenterGrid.add(new RButton(btn -> System.out.println("2"), "2"));
         panelCenterGrid.add(new RButton(btn -> System.out.println("3"), "3"));
         panelCenterGrid.add(new RButton(btn -> System.out.println("4"), "4"));
