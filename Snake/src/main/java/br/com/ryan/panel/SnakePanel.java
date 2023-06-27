@@ -1,5 +1,7 @@
 package br.com.ryan.panel;
 
+import br.com.ryan.action.listener.SnakeActionListener;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
@@ -35,15 +37,30 @@ public class SnakePanel extends JPanel {
     }
 
     public void startGame() {
+        newApple();
+        running = true;
 
+        timer = new Timer(DELAY, new SnakeActionListener());
+        timer.start();
     }
 
     public void paintComponent(Graphics g) {
-
+        super.paintComponent(g);
+        draw(g);
     }
 
     public void draw(Graphics g) {
+        final int BLOCK_HEIGHT = SCREEN_HEIGHT / UNIT_SIZE;
+        for (int i=0; i<BLOCK_HEIGHT; i++) {
+            final int GAP = i*UNIT_SIZE;
+            g.drawLine(GAP, 0, GAP, SCREEN_HEIGHT);
+        }
 
+        final int BLOCK_WIDTH = SCREEN_WIDTH / UNIT_SIZE;
+        for (int i=0; i<BLOCK_WIDTH; i++) {
+            final int GAP = i*UNIT_SIZE;
+            g.drawLine(0, GAP, SCREEN_WIDTH, GAP);
+        }
     }
 
     public void newApple() {
