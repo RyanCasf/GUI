@@ -1,9 +1,9 @@
 package br.com.ryan.panel;
 
-import br.com.ryan.action.listener.SnakeActionListener;
-
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.Random;
@@ -116,18 +116,84 @@ public class SnakePanel extends JPanel {
     }
 
     public void checkCollisions() {
+        for (int i=bodyParts; i>0; i--) {
+            if (x[0] == x[i] && x[i] == y[0]) {
+                running = false;
+            }
+        }
 
+        if (x[0] < 0) {
+            running = false;
+        }
+
+        if (x[0] > SCREEN_WIDTH) {
+            running = false;
+        }
+
+        if (y[0] < 0) {
+            running = false;
+        }
+
+        if (y[0] > SCREEN_HEIGHT) {
+            running = false;
+        }
+
+        if (!running == false) {
+            timer.stop();
+        }
     }
 
     public void gameOver() {
 
     }
 
+    public class SnakeActionListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (running) {
+                move();
+
+                checkAppple();
+                checkCollisions();
+            }
+
+            repaint();
+        }
+    }
+
     public class SnakeKeyAdapter extends KeyAdapter {
 
         @Override
         public void keyPressed(KeyEvent event) {
+            switch (event.getKeyCode()) {
+                case KeyEvent.VK_LEFT:
+                    if (direction != 'R') {
+                        direction = 'L';
+                    }
+                    break;
 
+                case KeyEvent.VK_RIGHT:
+                    if (direction != 'L') {
+                        direction = 'R';
+                    }
+                    break;
+
+                case KeyEvent.VK_UP:
+                    if (direction != 'D') {
+                        direction = 'U';
+                    }
+                    break;
+
+                case KeyEvent.VK_DOWN:
+                    if (direction != 'U') {
+                        direction = 'D';
+                    }
+                    break;
+
+                default:
+                    break;
+            }
         }
     }
 }
