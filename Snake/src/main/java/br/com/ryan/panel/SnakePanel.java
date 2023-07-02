@@ -22,7 +22,7 @@ public class SnakePanel extends JPanel implements ActionListener {
     private int applesEaten = 0;
     private int appleX;
     private int appleY;
-    private char direction = 'R';
+    private char direction = 'A';
     private boolean running = false;
     private Timer timer;
     private Random random;

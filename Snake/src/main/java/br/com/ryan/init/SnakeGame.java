@@ -1,10 +1,10 @@
 package br.com.ryan.init;
 
-import br.com.ryan.frame.SwitchFrame;
+import br.com.ryan.frame.SnakeFrame;
 
 public class SnakeGame {
 
     public static void main(String... args) {
-        new SwitchFrame();
+        new SnakeFrame();
     }
 }
