@@ -37,7 +37,6 @@ public class SnakePanel extends JPanel implements ActionListener {
         newApple();
         running = true;
         timer = new Timer(Config.DELAY,this);
-        timer.start();
     }
 
     @Override
@@ -168,6 +167,8 @@ public class SnakePanel extends JPanel implements ActionListener {
 
         @Override
         public void keyPressed(KeyEvent e) {
+            timer.start();
+
             switch(e.getKeyCode()) {
                 case KeyEvent.VK_LEFT:
                     if(direction != Direction.RIGHT) {
