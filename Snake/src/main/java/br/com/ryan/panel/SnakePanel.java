@@ -1,6 +1,7 @@
 package br.com.ryan.panel;
 
 import br.com.ryan.util.Config;
+import br.com.ryan.util.Direction;
 
 import javax.swing.*;
 import java.awt.*;
@@ -18,7 +19,7 @@ public class SnakePanel extends JPanel implements ActionListener {
     private int applesEaten = 0;
     private int appleX;
     private int appleY;
-    private char direction = 'R';
+    private Direction direction = Direction.RIGHT;
     private boolean running = false;
     private Timer timer;
     private final Random random;
@@ -54,12 +55,11 @@ public class SnakePanel extends JPanel implements ActionListener {
         g.setColor(Color.RED);
         g.fillOval(appleX, appleY, Config.UNIT_SIZE, Config.UNIT_SIZE);
 
-        for(int i = 0; i< bodyParts;i++) {
-            if(i == 0) {
+        for (int i = 0; i < bodyParts; i++) {
+            if (i == 0) {
                 g.setColor(Config.COLOR_GREEN_HEADER);
                 g.fillRect(axisX[i], axisY[i], Config.UNIT_SIZE, Config.UNIT_SIZE);
-            }
-            else {
+            } else {
                 g.setColor(Config.COLOR_GREEN_TABLE_LIGHT);
                 g.fillRect(axisX[i], axisY[i], Config.UNIT_SIZE, Config.UNIT_SIZE);
             }
@@ -78,24 +78,24 @@ public class SnakePanel extends JPanel implements ActionListener {
 
     public void move(){
         for(int i = bodyParts;i>0;i--) {
-            axisX[i] = axisX[i-1];
-            axisY[i] = axisY[i-1];
+            axisX[i] = axisX[i - 1];
+            axisY[i] = axisY[i - 1];
         }
 
         switch(direction) {
-            case 'U':
+            case TOP:
                 axisY[0] = axisY[0] - Config.UNIT_SIZE;
                 break;
 
-            case 'D':
+            case BOTTOM:
                 axisY[0] = axisY[0] + Config.UNIT_SIZE;
                 break;
 
-            case 'L':
+            case LEFT:
                 axisX[0] = axisX[0] - Config.UNIT_SIZE;
                 break;
 
-            case 'R':
+            case RIGHT:
                 axisX[0] = axisX[0] + Config.UNIT_SIZE;
                 break;
 
@@ -170,26 +170,26 @@ public class SnakePanel extends JPanel implements ActionListener {
         public void keyPressed(KeyEvent e) {
             switch(e.getKeyCode()) {
                 case KeyEvent.VK_LEFT:
-                    if(direction != 'R') {
-                        direction = 'L';
+                    if(direction != Direction.RIGHT) {
+                        direction = Direction.LEFT;
                     }
                     break;
 
                 case KeyEvent.VK_RIGHT:
-                    if(direction != 'L') {
-                        direction = 'R';
+                    if(direction != Direction.LEFT) {
+                        direction = Direction.RIGHT;
                     }
                     break;
 
                 case KeyEvent.VK_UP:
-                    if(direction != 'D') {
-                        direction = 'U';
+                    if(direction != Direction.BOTTOM) {
+                        direction = Direction.TOP;
                     }
                     break;
 
                 case KeyEvent.VK_DOWN:
-                    if(direction != 'U') {
-                        direction = 'D';
+                    if(direction != Direction.TOP) {
+                        direction = Direction.BOTTOM;
                     }
                     break;
 
