@@ -11,4 +11,9 @@ public class Config {
     public static final int DELAY = 70;
 
     public static final Font FONT_INK_FREE = new Font("Ink Free", Font.BOLD, 40);
+
+    public static final Color COLOR_GREEN_HEADER = new Color(74, 117, 44);
+    public static final Color COLOR_GREEN_BORDER = new Color(87, 138, 52);
+    public static final Color COLOR_GREEN_TABLE_LIGHT = new Color(170, 215, 81);
+    public static final Color COLOR_GREEN_TABLE_STRONG = new Color(162, 209, 73);
 }

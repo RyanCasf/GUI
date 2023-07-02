@@ -14,7 +14,7 @@ public class SnakePanel extends JPanel implements ActionListener {
 
     private final int[] axisX = new int[Config.GAME_UNITS];
     private final int[] axisY = new int[Config.GAME_UNITS];
-    private int bodyParts = 6;
+    private int bodyParts = 2;
     private int applesEaten = 0;
     private int appleX;
     private int appleY;
@@ -46,29 +46,29 @@ public class SnakePanel extends JPanel implements ActionListener {
     }
 
     public void draw(Graphics g) {
-        if(running) {
-            g.setColor(Color.red);
-            g.fillOval(appleX, appleY, Config.UNIT_SIZE, Config.UNIT_SIZE);
-
-            for(int i = 0; i< bodyParts;i++) {
-                if(i == 0) {
-                    g.setColor(Color.green);
-                    g.fillRect(axisX[i], axisY[i], Config.UNIT_SIZE, Config.UNIT_SIZE);
-                }
-                else {
-                    g.setColor(new Color(45,180,0));
-                    g.fillRect(axisX[i], axisY[i], Config.UNIT_SIZE, Config.UNIT_SIZE);
-                }
-            }
-
-            g.setColor(Color.red);
-            g.setFont(Config.FONT_INK_FREE);
-            FontMetrics metrics = getFontMetrics(g.getFont());
-            g.drawString(getScore(), (Config.SCREEN_WIDTH - metrics.stringWidth(getScore()))/2, g.getFont().getSize());
-        }
-        else {
+        if (!running) {
             gameOver(g);
+            return;
         }
+
+        g.setColor(Color.RED);
+        g.fillOval(appleX, appleY, Config.UNIT_SIZE, Config.UNIT_SIZE);
+
+        for(int i = 0; i< bodyParts;i++) {
+            if(i == 0) {
+                g.setColor(Config.COLOR_GREEN_HEADER);
+                g.fillRect(axisX[i], axisY[i], Config.UNIT_SIZE, Config.UNIT_SIZE);
+            }
+            else {
+                g.setColor(Config.COLOR_GREEN_TABLE_LIGHT);
+                g.fillRect(axisX[i], axisY[i], Config.UNIT_SIZE, Config.UNIT_SIZE);
+            }
+        }
+
+        g.setColor(Color.RED);
+        g.setFont(Config.FONT_INK_FREE);
+        FontMetrics metrics = getFontMetrics(g.getFont());
+        g.drawString(getScore(), (Config.SCREEN_WIDTH - metrics.stringWidth(getScore()))/2, g.getFont().getSize());
     }
 
     public void newApple(){
@@ -147,11 +147,6 @@ public class SnakePanel extends JPanel implements ActionListener {
         g.setFont(Config.FONT_INK_FREE);
         FontMetrics metrics1 = getFontMetrics(g.getFont());
         g.drawString(getScore(), (Config.SCREEN_WIDTH - metrics1.stringWidth(getScore()))/2, g.getFont().getSize());
-
-        g.setColor(Color.RED);
-        g.setFont(Config.FONT_INK_FREE);
-        FontMetrics metrics2 = getFontMetrics(g.getFont());
-        g.drawString("Game Over", (Config.SCREEN_WIDTH - metrics2.stringWidth("Game Over"))/2, Config.SCREEN_HEIGHT/2);
     }
 
     private String getScore() {
