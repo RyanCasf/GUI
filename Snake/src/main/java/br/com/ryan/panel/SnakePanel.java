@@ -146,6 +146,16 @@ public class SnakePanel extends JPanel implements ActionListener {
         g.setFont(Config.FONT_INK_FREE);
         FontMetrics metrics1 = getFontMetrics(g.getFont());
         g.drawString(getScore(), (Config.SCREEN_WIDTH - metrics1.stringWidth(getScore()))/2, g.getFont().getSize());
+
+        for (int i = 0; i < bodyParts; i++) {
+            if (i == 0) {
+                g.setColor(Config.COLOR_GREEN_HEADER);
+                g.fillRect(axisX[i], axisY[i], Config.UNIT_SIZE, Config.UNIT_SIZE);
+            } else {
+                g.setColor(Config.COLOR_GREEN_TABLE_LIGHT);
+                g.fillRect(axisX[i], axisY[i], Config.UNIT_SIZE, Config.UNIT_SIZE);
+            }
+        }
     }
 
     private String getScore() {
